@@ -1,0 +1,10 @@
+<mat-toolbar class="bg-blue-900 text-white shadow-md">
+  <img src="./assets/img/logo_blanco_v2.png" alt="" width="160">
+  <span class="example-spacer"></span>
+  <button mat-button *ngFor="let item_menu of menu" [routerLink]="item_menu.redirect">{{ item_menu.nombre }}</button>
+  <button mat-icon-button routerLink="/logout" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon><span class="material-symbols-outlined">
+      logout
+      </span></mat-icon>
+  </button>
+</mat-toolbar>

@@ -1,0 +1,32 @@
+mat-form-field {
+    width: 100%;
+  }
+
+.bg-gray{
+    background-color: gray;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.cover-photo {
+  width: 100%;
+  height: inherit;
+  overflow: hidden;
+  background-size: 100% 100%;
+
+}
+
+mat-chip {
+  max-width: 200px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}

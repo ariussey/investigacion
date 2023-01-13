@@ -1,0 +1,255 @@
+<mat-toolbar>
+    <span>Inicio</span>
+    <span class="example-spacer"></span>
+    <!-- Button trigger modal -->
+<button mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#ModalBuscar">
+    Buscar
+</button>
+</mat-toolbar>
+<div class="cover-photo" style="height:454px; transform: translateY(0px); background-image: url(https://df5kbf1hky40.cloudfront.net/media/library_center/hero-image/2019/03/20190326165931.jpg);">
+    <div class="relative text-white top-2/3 p-8">
+        <span class="text-6xl">Bienvenido</span><br>
+        <span class="text-xl">a la Plataforma de Revisas y Artículos Científicos</span>
+    </div>
+</div>
+<div class="container">
+    
+    <h1 class="text-center m-4">Ultimas revistas</h1>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-6 g-4 m-4">
+        <div class="col">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/14116210/pexels-photo-14116210.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/7034723/pexels-photo-7034723.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/10520481/pexels-photo-10520481.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card">
+              <img src="https://images.pexels.com/photos/12192456/pexels-photo-12192456.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://images.pexels.com/photos/11489519/pexels-photo-11489519.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://images.pexels.com/photos/14013604/pexels-photo-14013604.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <h2 class="text-center">Categorías</h2>
+    <div class="row m-4">
+        <div class="col-4">
+            <!-- <div class="list-group" id="list-tab" role="tablist"> -->
+                <mat-selection-list #idcategoria [(ngModel)]="selectedOptions" [multiple]="false">
+                  <mat-list-option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</mat-list-option>
+                  <!-- <mat-list-option id="list-ciencia-list" data-bs-toggle="list" href="#list-ciencia" role="tab" aria-controls="list-salud">Ciencia</mat-list-option>
+                  <mat-list-option id="list-medicina-list" data-bs-toggle="list" href="#list-medicina" role="tab" aria-controls="list-medicina">Medicina</mat-list-option>
+                  <mat-list-option id="list-tecnologia-list" data-bs-toggle="list" href="#list-tecnologia" role="tab" aria-controls="list-tecnologia">Tecnología</mat-list-option>
+                  <mat-list-option id="list-educacion-list" data-bs-toggle="list" href="#list-educacion" role="tab" aria-controls="list-educacion">Educación</mat-list-option> -->
+                </mat-selection-list>
+                
+            <!-- </div> -->
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-ciencia" role="tabpanel" aria-labelledby="list-ciencia-list">
+              <!-- <h1><p>{{idcategoria.selectedOptions.hasValue() ? idcategoria.selectedOptions.selected[0].value : ''}}</p></h1> -->
+              <h1><p>{{selectedOptions[0]}}</p></h1>
+              <hr>
+              <mat-accordion class="example-headers-align">
+                <!-- ITEM 1 -->
+                <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Libros</mat-panel-title>
+                    <mat-panel-description><mat-icon>menu_book</mat-icon></mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <div *ngIf="selectedOptions[0] =='Administración y Finanzas'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Finanzas</mat-list-option>
+                      <mat-list-option>Gestión Pública</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Ingeniería de Sistemas'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Bases de Datatos</mat-list-option>
+                      <mat-list-option>Desarrollo de Software</mat-list-option>
+                      <mat-list-option>Diseño UX</mat-list-option>
+                      <mat-list-option>Gestión de Proyectos</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Derecho'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Derecho Penal</mat-list-option>
+                      <mat-list-option>Derecho Procesal</mat-list-option>
+                      <mat-list-option>Derecho de Niños</mat-list-option>
+                      <mat-list-option>Derecho Internacional</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Ingeniería Industrial'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Seguridad y Salud</mat-list-option>
+                      <mat-list-option>Automatización</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Contabilidad'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Plan Contable</mat-list-option>
+                      <mat-list-option>Caja y Bancos</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Enfermería'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Salud de la Mujer</mat-list-option>
+                      <mat-list-option>Salud en Emergencias y Desastres</mat-list-option>
+                      <mat-list-option>Salud del Adulto</mat-list-option>
+                      <mat-list-option>Salud en Niños</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Psicología'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Psicología Organizacional</mat-list-option>
+                      <mat-list-option>Psicología Forense</mat-list-option>
+                      <mat-list-option>Psicología del Comportamiento</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Obstetricia'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Pediatría</mat-list-option>
+                      <mat-list-option>Embriología</mat-list-option>
+                      <mat-list-option>Pre-Natal</mat-list-option>
+                      <mat-list-option>Psicoprofilaxis Obstétrica</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <mat-action-row>
+                    <button mat-button color="primary" (click)="nextStep()">Next</button>
+                  </mat-action-row>
+                </mat-expansion-panel>
+              
+                <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Revistas</mat-panel-title>
+                    <mat-panel-description><mat-icon>library_books</mat-icon></mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <mat-action-row>
+                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                    <button mat-button color="primary" (click)="nextStep()">Next</button>
+                  </mat-action-row>
+                </mat-expansion-panel>
+              
+                <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Tesis</mat-panel-title>
+                    <mat-panel-description><mat-icon>book</mat-icon></mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div *ngIf="selectedOptions[0] =='Administración y Finanzas'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option routerLink="/categoria">Cultura y Organización</mat-list-option>
+                      <mat-list-option>Gestión Pública</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Enfermería'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Salud Pública</mat-list-option>
+                      <mat-list-option>Salud Ambiental</mat-list-option>
+                      <mat-list-option>Satisfacción con los Servicios de Salud</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Obstetricia'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Salud Pública</mat-list-option>
+                      <mat-list-option>Salud Ambiental</mat-list-option>
+                      <mat-list-option>Satisfacción con los Servicios de Salud</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  <div *ngIf="selectedOptions[0] =='Psicología'">
+                    <mat-selection-list [multiple]="false">
+                      <mat-list-option>Calidad de Vida</mat-list-option>
+                      <mat-list-option>Resiliencia</mat-list-option>
+                      <mat-list-option>Bienestar Psicológico</mat-list-option>
+                    </mat-selection-list>
+                  </div>
+                  
+                    <div *ngIf="selectedOptions[0] =='Ingeniería de Sistemas'">
+                      <mat-selection-list [multiple]="false">
+                        <mat-list-option></mat-list-option>
+                        <mat-list-option>Resiliencia</mat-list-option>
+                        <mat-list-option>Bienestar Psicológico</mat-list-option>
+                      </mat-selection-list>
+                    </div>
+                    <mat-action-row>
+                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                    <button mat-button color="primary" (click)="nextStep()">End</button>
+                  </mat-action-row>
+                </mat-expansion-panel>
+              
+              </mat-accordion>
+              
+            </div>
+            <!-- <div class="tab-pane fade" id="list-medicina" role="tabpanel" aria-labelledby="list-medicina-list"><h1>Medicina</h1></div>
+            <div class="tab-pane fade" id="list-tecnologia" role="tabpanel" aria-labelledby="list-tecnologia-list"><h1>Tecnología</h1></div>
+            <div class="tab-pane fade" id="list-educacion" role="tabpanel" aria-labelledby="list-educacion-list"><h1>Educación</h1></div> -->
+            </div>
+        </div>
+      </div>
+</div>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="ModalBuscar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content bg-blue-900">   
+        <div class="modal-body">
+            <mat-card>
+              <h1 class="text-center">Buscador</h1>
+                <mat-form-field appearance="outline">
+                    <mat-label>Buscador</mat-label>
+                    <input matInput placeholder="Escriba una palabra...">
+                </mat-form-field>
+                <hr>
+                <mat-card-actions align="end">
+                    <button mat-raised-button data-bs-dismiss="modal">Cancelar</button>
+                    <button mat-raised-button color="primary">Buscar</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
